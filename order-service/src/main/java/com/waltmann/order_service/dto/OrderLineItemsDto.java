@@ -1,4 +1,4 @@
-package com.waltmann.notion_service.dto;
+package com.waltmann.order_service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

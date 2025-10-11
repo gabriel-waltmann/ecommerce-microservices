@@ -1,15 +1,16 @@
-package com.waltmann.notion_service.controller;
+package com.waltmann.order_service.controller;
 
-import com.waltmann.notion_service.dto.OrderRequest;
-import com.waltmann.notion_service.service.OrderService;
+import com.waltmann.order_service.dto.OrderRequest;
+import com.waltmann.order_service.service.OrderService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/order")
-@RequiredArgsConstructor
 public class OrderController {
+    @Autowired
     private OrderService orderService;
 
     @PostMapping

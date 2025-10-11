@@ -1,19 +1,20 @@
-package com.waltmann.notion_service.service;
+package com.waltmann.order_service.service;
 
-import com.waltmann.notion_service.dto.OrderLineItemsDto;
-import com.waltmann.notion_service.dto.OrderRequest;
-import com.waltmann.notion_service.model.Order;
-import com.waltmann.notion_service.model.OrderLineItems;
-import com.waltmann.notion_service.repository.OrderRepository;
+import com.waltmann.order_service.dto.OrderLineItemsDto;
+import com.waltmann.order_service.dto.OrderRequest;
+import com.waltmann.order_service.model.Order;
+import com.waltmann.order_service.model.OrderLineItems;
+import com.waltmann.order_service.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
 public class OrderService {
+    @Autowired
     private OrderRepository orderRepository;
 
     public void placeOrder(OrderRequest orderRequest) {
