@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.0.25
+    container_name: inventory_db
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: inventory_db
+      MYSQL_TCP_PORT: 3006
+    ports:
+      - "3006:3006"
+    volumes:
+      - inventory_db_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  inventory_db_data:
