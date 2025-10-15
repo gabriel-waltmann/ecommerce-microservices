@@ -1,7 +1,7 @@
-package com.waltmann.inventory_sesrvice;
+package com.waltmann.inventory_service;
 
-import com.waltmann.inventory_sesrvice.model.Inventory;
-import com.waltmann.inventory_sesrvice.repository.InventoryRepository;
+import com.waltmann.inventory_service.model.Inventory;
+import com.waltmann.inventory_service.repository.InventoryRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

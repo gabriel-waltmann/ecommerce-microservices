@@ -1,4 +1,4 @@
-package com.waltmann.inventory_sesrvice.model;
+package com.waltmann.inventory_service.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

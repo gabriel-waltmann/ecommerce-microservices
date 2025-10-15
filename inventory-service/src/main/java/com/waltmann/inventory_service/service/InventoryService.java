@@ -1,7 +1,7 @@
-package com.waltmann.inventory_sesrvice.service;
+package com.waltmann.inventory_service.service;
 
-import com.waltmann.inventory_sesrvice.dto.InventoryResponse;
-import com.waltmann.inventory_sesrvice.repository.InventoryRepository;
+import com.waltmann.inventory_service.dto.InventoryResponse;
+import com.waltmann.inventory_service.repository.InventoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

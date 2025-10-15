@@ -1,4 +1,4 @@
-package com.waltmann.inventory_sesrvice;
+package com.waltmann.inventory_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

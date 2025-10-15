@@ -1,4 +1,4 @@
-package com.waltmann.inventory_sesrvice.dto;
+package com.waltmann.inventory_service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

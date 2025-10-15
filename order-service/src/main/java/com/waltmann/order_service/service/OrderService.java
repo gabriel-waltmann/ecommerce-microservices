@@ -7,10 +7,9 @@ import com.waltmann.order_service.model.Order;
 import com.waltmann.order_service.model.OrderLineItems;
 import com.waltmann.order_service.repository.OrderRepository;
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,7 +22,7 @@ public class OrderService {
     private OrderRepository orderRepository;
 
     @Autowired
-    private WebClient webClient;
+    private RestTemplate restTemplate;
 
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -39,18 +38,16 @@ public class OrderService {
         List<String> skuCodes = order.getOrderLineItemsList().stream().map(OrderLineItems::getSkuCode).toList();
 
         // Call Inventory Service, and place order if product is in stock
-        // Stock
-        InventoryResponse[] inventoryResponseArray = webClient.get()
-                .uri(
-                    "http://localhost:8082/inventory",
-                    uriBuilder -> uriBuilder.queryParam("skuCodes", skuCodes).build()
-                )
-                .retrieve()
-                .bodyToMono(InventoryResponse[].class)
-                .block();
+        String skuCodesParam = String.join(",", skuCodes);
+        String url = "http://inventory-service/inventory?skuCodes=" + skuCodesParam;
+
+        InventoryResponse[] inventoryResponseArray = restTemplate.getForObject(
+                url,
+                InventoryResponse[].class
+        );
 
         if (inventoryResponseArray == null){
-            throw new IllegalArgumentException("Internal server error");
+            throw new IllegalArgumentException("Internal server error works eureka  ");
         }
 
         boolean allProductsInStock = Arrays.stream(inventoryResponseArray)

@@ -1,7 +1,7 @@
-package com.waltmann.inventory_sesrvice.controller;
+package com.waltmann.inventory_service.controller;
 
-import com.waltmann.inventory_sesrvice.dto.InventoryResponse;
-import com.waltmann.inventory_sesrvice.service.InventoryService;
+import com.waltmann.inventory_service.dto.InventoryResponse;
+import com.waltmann.inventory_service.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
